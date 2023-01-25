@@ -1,21 +1,26 @@
 using CodeBase.Infrastructure.Services.BubbleDeath;
+using CodeBase.Infrastructure.Services.SphereMove;
 using CodeBase.SoapBubble;
 using UniRx;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.ClickDetector
 {
-	public class ClickDetectorService
+	public class ClickDetectorService  //Rename MOveOnClickService
 	{
 		private readonly BubbleDeathService _bubbleDeathService;
-		private const float MaxRayDistance = 10;
+		private const float MaxRayDistance = 50;
 		private readonly Camera _camera;
-		private readonly RaycastHit[] _raycastHits = new RaycastHit[20];
+		private readonly RaycastHit[] _raycastHits = new RaycastHit[1];
 		private readonly CompositeDisposable _compositeDisposable = new();
-
-		public ClickDetectorService(BubbleDeathService bubbleDeathService)
+		private SphereMoveService _sphereMoveService;
+		private LayerMask _terraineMask = LayerMask.NameToLayer("Plane");
+		
+		
+		public ClickDetectorService(BubbleDeathService bubbleDeathService, SphereMoveService sphereMoveService)
 		{
 			_bubbleDeathService = bubbleDeathService;
+			_sphereMoveService = sphereMoveService;
 			_camera = Camera.main;
 		}
 		public void StartDetecting()
@@ -32,17 +37,19 @@ namespace CodeBase.Infrastructure.Services.ClickDetector
 		{
 			if (Input.GetKeyDown(KeyCode.Mouse0))
 			{
-				Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-				int size = Physics.RaycastNonAlloc(ray, _raycastHits, MaxRayDistance);
-				for (int i = 0; i < size; i++)
+				var ray = _camera.ScreenPointToRay(Input.mousePosition);
+
+				if (Physics.Raycast(ray,out var hit, 2000))
 				{
-					RaycastHit hit = _raycastHits[i];
-					if (hit.collider.TryGetComponent(out Bubble bubble))
-					{
-						_bubbleDeathService.KillBubble(bubble);
-					}
-				}
+					_sphereMoveService.MoveTo(hit.point);
+				} 
 			}
 		}
+		
+		// private void OnDrawGizmos()
+		// {
+		// 	Gizmos.color = Color.red;
+		// 	Gizmos.DrawRay(_ray.origin, _ray.direction * 200f);
+		// }
 	}
 }

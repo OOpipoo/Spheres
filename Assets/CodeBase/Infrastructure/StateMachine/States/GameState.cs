@@ -21,7 +21,8 @@ namespace CodeBase.Infrastructure.StateMachine.States
 
         [Inject]
         private void Construct(BubbleSpawnerService bubbleSpawnerService, GameGameSpeedMultiplierService gameGameSpeedMultiplierService,
-           ClickDetectorService clickDetectorService, DeathCounterService deathCounterService, CountDownTimerService countDownTimerService, SphereSpawnerService sphereSpawnerService)
+           ClickDetectorService clickDetectorService, DeathCounterService deathCounterService, CountDownTimerService countDownTimerService,
+           SphereSpawnerService sphereSpawnerService)
         {
             _countDownTimerService = countDownTimerService;
             _deathCounterService = deathCounterService;
@@ -47,6 +48,7 @@ namespace CodeBase.Infrastructure.StateMachine.States
             _gameGameSpeedMultiplierService.Stop();
             _clickDetectorService.StopDetecting();
             _deathCounterService.Hide();
+            _sphereSpawnerService.DestroySphere();
         }
     }
 }

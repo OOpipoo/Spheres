@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedUpFactor: 1.2
   SpeedUpTimer: 6
-  RoundDuration: 30
+  RoundDuration: 60
