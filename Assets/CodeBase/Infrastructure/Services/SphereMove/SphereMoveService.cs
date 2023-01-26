@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Services.SphereSpawner;
+﻿using System.Collections.Generic;
+using CodeBase.Infrastructure.Services.SphereSpawner;
 using DG.Tweening;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace CodeBase.Infrastructure.Services.SphereMove
 			_sphereSpawnerService = sphereSpawnerService;
 		}
 
+		
 		public void MoveTo(Vector3 point)
 		{
 			var spherePos = _sphereSpawnerService.GetSphere().transform;
@@ -21,6 +23,11 @@ namespace CodeBase.Infrastructure.Services.SphereMove
 				0);
 
 			spherePos.DOMove(endPos, .5f);
+		}
+		public void MoveToPath(List<Vector3> points)
+		{
+			var spherePos = _sphereSpawnerService.GetSphere().transform;
+			spherePos.DOPath(points.ToArray(), 1);
 		}
 		
 	}
