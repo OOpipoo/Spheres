@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d69c2f109587ac4abf5eafae2c7487d, type: 3}
   m_Name: SpawnPreferences
   m_EditorClassIdentifier: 
-  BubblesPerSecond: 1.2
+  BubblesPerSecond: 1.5
   MinSpeed: 1
   MaxSpeed: 2
   MinSize: 0.3

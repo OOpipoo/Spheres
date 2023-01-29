@@ -1,6 +1,7 @@
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.UI.CountDownTimer;
 using CodeBase.Infrastructure.Services.UI.DeathCounter;
+using CodeBase.Infrastructure.Services.UI.DistanceCounter;
 using CodeBase.Infrastructure.Services.UI.EndGameScreen;
 using CodeBase.Infrastructure.Services.UI.TapToStart;
 using Zenject;
@@ -13,6 +14,7 @@ namespace CodeBase.Infrastructure.ContextInstallers
 		{
 			BindTapToStart();
 			BindDeathCounter();
+			BindDistanceCounter();
 			BindCountDownTimer();
 			BindEndGameScreen();
 		}
@@ -27,6 +29,12 @@ namespace CodeBase.Infrastructure.ContextInstallers
 			Container
 				.BindInterfacesAndSelfTo<DeathCounterService>()
 				.FromComponentInNewPrefabResource(AssetPath.DeathCounter)
+				.AsSingle();
+		
+		private void BindDistanceCounter() =>
+			Container
+				.BindInterfacesAndSelfTo<DistanceCounterService>()
+				.FromComponentInNewPrefabResource(AssetPath.DistanceCounter)
 				.AsSingle();
 
 		private void BindTapToStart() =>

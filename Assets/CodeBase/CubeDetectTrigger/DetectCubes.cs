@@ -1,16 +1,15 @@
-﻿using System;
-using CodeBase.Infrastructure.Services.BubbleDeath;
+﻿using CodeBase.Infrastructure.Services.BubbleDeath;
 using CodeBase.SoapBubble;
-using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.TriggerDetect
+namespace CodeBase.CubeDetectTrigger
 {
-	public class Detect : MonoBehaviour
+	public class DetectCubes : MonoBehaviour
 	{
 		private BubbleDeathService _bubbleDeathService;
 
+		
 		[Inject]
 		private void Construct(BubbleDeathService bubbleDeathService)
 		{

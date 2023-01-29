@@ -12,6 +12,7 @@ namespace CodeBase.Infrastructure.AssetManagement
         
         public const string TapToStart = "UI/TapToStart";
         public const string DeathCounter = "UI/DeathCounter";
+        public const string DistanceCounter = "UI/DistanceCounter";
         public const string CountDownTimer = "UI/CountDownTimer"; 
         public const string EndGameScreen = "UI/EndGameScreen";
        

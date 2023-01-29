@@ -1,6 +1,5 @@
 ﻿using CodeBase.GameSphere;
 using CodeBase.Infrastructure.StaticData;
-using CodeBase.SoapBubble;
 using UnityEngine;
 using Zenject;
 
@@ -20,21 +19,21 @@ namespace CodeBase.Infrastructure.Services.SphereSpawner
 			_spherePreferences = spherePreferences;
 		}
 
-		public void CreateGameSphereSetStartPosition()
+		public void CreateGameSphere()
 		{
 			Sphere sphere = _spherePreferences.SpherePrefab;
 			_sphere = _diContainer.InstantiatePrefabForComponent<Sphere>(sphere);
-			sphere.transform.position = _gameSphereStartPoint;  
+			SetSphereStartPosition(sphere);  
 		}
-	
+
+		private void SetSphereStartPosition(Sphere sphere)
+		{
+			sphere.transform.position = _gameSphereStartPoint;
+		}
+
 		public void DestroySphere()
 		{
 			Object.Destroy(_sphere.gameObject);
-		}
-		
-		public Sphere GetSphere()
-		{
-			return _sphere; 
 		}
 	}
 }

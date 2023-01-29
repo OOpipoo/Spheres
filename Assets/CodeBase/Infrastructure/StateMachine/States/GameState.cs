@@ -4,6 +4,7 @@ using CodeBase.Infrastructure.Services.GameSpeedMultiplier;
 using CodeBase.Infrastructure.Services.SphereSpawner;
 using CodeBase.Infrastructure.Services.UI.CountDownTimer;
 using CodeBase.Infrastructure.Services.UI.DeathCounter;
+using CodeBase.Infrastructure.Services.UI.DistanceCounter;
 using Zenject;
 
 namespace CodeBase.Infrastructure.StateMachine.States
@@ -16,13 +17,14 @@ namespace CodeBase.Infrastructure.StateMachine.States
         private DeathCounterService _deathCounterService;
         private CountDownTimerService _countDownTimerService;
         private SphereSpawnerService _sphereSpawnerService;
+        private DistanceCounterService _distanceCounterService;
 
         public GameState(GameLoopStateMachine gameLoopStateMachine) : base(gameLoopStateMachine) { }
 
         [Inject]
         private void Construct(BubbleSpawnerService bubbleSpawnerService, GameGameSpeedMultiplierService gameGameSpeedMultiplierService,
            ClickDetectorService clickDetectorService, DeathCounterService deathCounterService, CountDownTimerService countDownTimerService,
-           SphereSpawnerService sphereSpawnerService)
+           SphereSpawnerService sphereSpawnerService, DistanceCounterService distanceCounterService)
         {
             _countDownTimerService = countDownTimerService;
             _deathCounterService = deathCounterService;
@@ -30,6 +32,7 @@ namespace CodeBase.Infrastructure.StateMachine.States
             _gameGameSpeedMultiplierService = gameGameSpeedMultiplierService;
             _bubbleSpawnerService = bubbleSpawnerService;
             _sphereSpawnerService = sphereSpawnerService;
+            _distanceCounterService = distanceCounterService;
         }
         public override void Enter()
         {
@@ -37,9 +40,9 @@ namespace CodeBase.Infrastructure.StateMachine.States
             _gameGameSpeedMultiplierService.Start();
             _clickDetectorService.StartDetecting();
             _deathCounterService.Show();
-            _countDownTimerService.StartTimer();
-            
-            _sphereSpawnerService.CreateGameSphereSetStartPosition();  
+            _distanceCounterService.Show();
+            _countDownTimerService.StartTimer(); 
+            _sphereSpawnerService.CreateGameSphere();  
         }
 
         public override void Exit()
@@ -48,6 +51,7 @@ namespace CodeBase.Infrastructure.StateMachine.States
             _gameGameSpeedMultiplierService.Stop();
             _clickDetectorService.StopDetecting();
             _deathCounterService.Hide();
+            _distanceCounterService.Hide();
             _sphereSpawnerService.DestroySphere();
         }
     }

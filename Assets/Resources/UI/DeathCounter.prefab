@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7304009043844047865}
   - component: {fileID: 7304009043844047864}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Death (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,5 +250,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _counterText: {fileID: 7304009043844047864}
-  _scaleFactor: 1.2
+  _scaleFactor: 1.1
   _scaleDuration: 0.2
