@@ -5,21 +5,21 @@ namespace CodeBase.Infrastructure.StateMachine.States
 {
     public class GameLoadState : State
     {
-        private BubblePool _bubblePool;
+        private CubePool _cubePool;
         private ImpactPool _impactPool;
 
         public GameLoadState(GameLoopStateMachine gameLoopStateMachine) : base(gameLoopStateMachine) { }
 
         [Inject]
-        private void Construct(BubblePool bubblePool, ImpactPool impactPool)
+        private void Construct(CubePool cubePool, ImpactPool impactPool)
         {
             _impactPool = impactPool;
-            _bubblePool = bubblePool;
+            _cubePool = cubePool;
         }
 
         public override void Enter()
         {
-            _bubblePool.Initialize();
+            _cubePool.Initialize();
             _impactPool.Initialize();
             GameLoopStateMachine.Enter<ResetState>();
         }

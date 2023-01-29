@@ -10,10 +10,12 @@ namespace CodeBase.Infrastructure.ContextInstallers
 			BindBubblePool();
 			BindImpactPool();
 		}
+		
 		private void BindBubblePool() =>
 			Container
-				.BindInterfacesAndSelfTo<BubblePool>()
+				.BindInterfacesAndSelfTo<CubePool>()
 				.AsSingle();
+		
 		private void BindImpactPool() =>
 			Container
 				.BindInterfacesAndSelfTo<ImpactPool>()

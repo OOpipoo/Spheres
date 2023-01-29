@@ -7,20 +7,20 @@ namespace CodeBase.CubeDetectTrigger
 {
 	public class DetectCubes : MonoBehaviour
 	{
-		private BubbleDeathService _bubbleDeathService;
+		private CubeDeathService _cubeDeathService;
 
 		
 		[Inject]
-		private void Construct(BubbleDeathService bubbleDeathService)
+		private void Construct(CubeDeathService cubeDeathService)
 		{
-			_bubbleDeathService = bubbleDeathService;
+			_cubeDeathService = cubeDeathService;
 		}
 		
 		private void OnTriggerEnter(Collider other)
 		{
-			if (other.TryGetComponent(out Bubble bubble))
+			if (other.TryGetComponent(out Cube bubble))
 			{
-				_bubbleDeathService.KillBubble(bubble);
+				_cubeDeathService.KillBubble(bubble);
 			}
 		}
 

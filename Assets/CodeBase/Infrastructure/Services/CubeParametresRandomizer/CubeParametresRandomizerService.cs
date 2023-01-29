@@ -1,14 +1,15 @@
+using CodeBase.Cubes;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.SoapBubble;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Services.BubbleParametresRandomizer
+namespace CodeBase.Infrastructure.Services.CubeParametresRandomizer
 {
-	public class BubbleParametresRandomizerService
+	public class CubeParametresRandomizerService
 	{
 		private readonly SpawnPreferences _spawnPreferences;
 
-		public BubbleParametresRandomizerService(SpawnPreferences spawnPreferences)
+		public CubeParametresRandomizerService(SpawnPreferences spawnPreferences)
 		{
 			_spawnPreferences = spawnPreferences;
 		}

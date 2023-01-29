@@ -7,10 +7,8 @@ namespace CodeBase.Infrastructure.AssetManagement
         public const string BubblePreferences = "Preferences/BubblePreferences";
         public const string SpawnerPreferences = "Preferences/SpawnPreferences";
         public const string GamePreferences = "Preferences/GamePreferences";
-        
         public const string VFXImpact = "VFX/Impact";
-        
-        public const string TapToStart = "UI/TapToStart";
+		public const string TapToStart = "UI/TapToStart";
         public const string DeathCounter = "UI/DeathCounter";
         public const string DistanceCounter = "UI/DistanceCounter";
         public const string CountDownTimer = "UI/CountDownTimer"; 

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using CodeBase.Infrastructure.Services.BubblesHolder;
+using CodeBase.Cubes;
+using CodeBase.Infrastructure.Services.CubeHolder;
 using CodeBase.SoapBubble;
 using UnityEngine;
 using Zenject;
@@ -8,12 +9,12 @@ namespace CodeBase.Infrastructure.Services.OutScreenRemover
 {
 	public class OutScreenRemoverService : ITickable
 	{
-		private readonly IBubblesHolder _bubblesHolder;
+		private readonly ICubesHolder _cubesHolder;
 		private readonly float _upBorder;
 
-		public OutScreenRemoverService(IBubblesHolder bubblesHolder)
+		public OutScreenRemoverService(ICubesHolder cubesHolder)
 		{
-			_bubblesHolder = bubblesHolder;
+			_cubesHolder = cubesHolder;
 			float orthographicSize = Camera.main.orthographicSize;
 			_upBorder = orthographicSize;
 		}
@@ -26,7 +27,7 @@ namespace CodeBase.Infrastructure.Services.OutScreenRemover
 		private List<ComponentsHolder> GetBubblesToRemove()
 		{
 			List<ComponentsHolder> bubblesToRemove = new List<ComponentsHolder>();
-			foreach (ComponentsHolder componentsHolder in _bubblesHolder.Get())
+			foreach (ComponentsHolder componentsHolder in _cubesHolder.Get())
 			{
 				float downBubblePoint = componentsHolder.Transform.position.y - componentsHolder.Radius;
 				if (downBubblePoint > _upBorder)
@@ -42,7 +43,7 @@ namespace CodeBase.Infrastructure.Services.OutScreenRemover
 		{
 			for (var i = bubblesToRemove.Count - 1; i >= 0; i--)
 			{
-				_bubblesHolder.Remove(bubblesToRemove[i]);
+				_cubesHolder.Remove(bubblesToRemove[i]);
 			}
 		}
 	}

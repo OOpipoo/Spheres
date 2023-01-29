@@ -1,3 +1,4 @@
+using CodeBase.Cubes;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.SoapBubble;
 using UnityEngine;
@@ -5,25 +6,25 @@ using Zenject;
 
 namespace CodeBase.Infrastructure.ObjectPools
 {
-	public class BubblePool : BasePool<Bubble, ComponentsHolder>
+	public class CubePool : BasePool<Cube, ComponentsHolder>
 	{
 		private readonly DiContainer _diContainer;
 		private readonly BubblePreferences _bubblePreferences;
 
-		public BubblePool(DiContainer diContainer, BubblePreferences bubblePreferences)
+		public CubePool(DiContainer diContainer, BubblePreferences bubblePreferences)
 		{
 			_diContainer = diContainer;
 			_bubblePreferences = bubblePreferences;
 		}
 
 		public void Initialize() => 
-			Fill(_bubblePreferences.PoolSize, _bubblePreferences.BubblePrefab);
+			Fill(_bubblePreferences.PoolSize, _bubblePreferences.cubePrefab);
 
-		protected override ComponentsHolder CreateObject(Bubble prefab)
+		protected override ComponentsHolder CreateObject(Cube prefab)
 		{
-			Bubble bubble = _diContainer.InstantiatePrefabForComponent<Bubble>(prefab);
-			ComponentsHolder componentsHolder = new ComponentsHolder(bubble);
-			bubble.ComponentsHolder = componentsHolder;
+			Cube cube = _diContainer.InstantiatePrefabForComponent<Cube>(prefab);
+			ComponentsHolder componentsHolder = new ComponentsHolder(cube);
+			cube.ComponentsHolder = componentsHolder;
 			return componentsHolder;
 		}
 

@@ -1,24 +1,25 @@
 using System;
+using CodeBase.Cubes;
 using CodeBase.Infrastructure.Factories;
-using CodeBase.Infrastructure.Services.BubblesHolder;
+using CodeBase.Infrastructure.Services.CubeHolder;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.SoapBubble;
 using UniRx;
 
-namespace CodeBase.Infrastructure.Services.BubbleSpawner
+namespace CodeBase.Infrastructure.Services.CubeSpawner
 {
-	public class BubbleSpawnerService
+	public class CubesSpawnerService
 	{
 		private readonly SpawnPreferences _spawnPreferences;
-		private readonly BubbleFactory _bubbleFactory;
-		private readonly IBubblesHolder _bubblesHolder;
+		private readonly CubeFactory _cubeFactory;
+		private readonly ICubesHolder _cubesHolder;
 		private readonly CompositeDisposable _disposables = new();
 
-		public BubbleSpawnerService(SpawnPreferences spawnPreferences, BubbleFactory bubbleFactory, IBubblesHolder bubblesHolder)
+		public CubesSpawnerService(SpawnPreferences spawnPreferences, CubeFactory cubeFactory, ICubesHolder cubesHolder)
 		{
 			_spawnPreferences = spawnPreferences;
-			_bubbleFactory = bubbleFactory;
-			_bubblesHolder = bubblesHolder;
+			_cubeFactory = cubeFactory;
+			_cubesHolder = cubesHolder;
 		}
 
 		public void StartSpawn() =>
@@ -33,8 +34,8 @@ namespace CodeBase.Infrastructure.Services.BubbleSpawner
 
 		private void SpawnEntity()
 		{
-			ComponentsHolder bubble = _bubbleFactory.CreateBubble();
-			_bubblesHolder.Add(bubble);
+			ComponentsHolder bubble = _cubeFactory.CreateBubble();
+			_cubesHolder.Add(bubble);
 		}
 	}
 }

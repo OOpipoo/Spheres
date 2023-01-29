@@ -1,17 +1,18 @@
 using System.Collections.Generic;
+using CodeBase.Cubes;
 using CodeBase.Infrastructure.ObjectPools;
 using CodeBase.Infrastructure.StateMachine;
 using CodeBase.SoapBubble;
 
-namespace CodeBase.Infrastructure.Services.BubblesHolder
+namespace CodeBase.Infrastructure.Services.CubeHolder
 {
-	public class BubblesHolderService : IResettable, IBubblesHolder
+	public class CubeHolderService : IResettable, ICubesHolder
 	{
-		private readonly BubblePool _bubblePool;
+		private readonly CubePool _cubePool;
 		private readonly List<ComponentsHolder> _componentsHolders = new();
 
-		public BubblesHolderService(BubblePool bubblePool) => 
-			_bubblePool = bubblePool;
+		public CubeHolderService(CubePool cubePool) => 
+			_cubePool = cubePool;
 
 		public void CustomReset()
 		{
@@ -27,7 +28,7 @@ namespace CodeBase.Infrastructure.Services.BubblesHolder
 		public void Remove(ComponentsHolder componentsHolder)
 		{
 			_componentsHolders.Remove(componentsHolder);
-			_bubblePool.Return(componentsHolder);
+			_cubePool.Return(componentsHolder);
 		}
 
 		public IEnumerable<ComponentsHolder> Get() => 

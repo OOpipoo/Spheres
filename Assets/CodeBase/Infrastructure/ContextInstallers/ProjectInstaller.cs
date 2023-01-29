@@ -1,13 +1,13 @@
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factories;
 using CodeBase.Infrastructure.Services.BubbleDeath;
-using CodeBase.Infrastructure.Services.BubbleParametresRandomizer;
-using CodeBase.Infrastructure.Services.BubblesHolder;
-using CodeBase.Infrastructure.Services.BubbleSpawner;
+using CodeBase.Infrastructure.Services.CubeHolder;
+using CodeBase.Infrastructure.Services.CubeParametresRandomizer;
+using CodeBase.Infrastructure.Services.CubesMove;
+using CodeBase.Infrastructure.Services.CubeSpawner;
 using CodeBase.Infrastructure.Services.GameSpeedMultiplier;
 using CodeBase.Infrastructure.Services.GameStats;
 using CodeBase.Infrastructure.Services.ImpactSpawner;
-using CodeBase.Infrastructure.Services.Move;
 using CodeBase.Infrastructure.Services.OutScreenPositioner;
 using CodeBase.Infrastructure.Services.OutScreenRemover;
 using CodeBase.Infrastructure.Services.SphereSpawner;
@@ -41,13 +41,12 @@ namespace CodeBase.Infrastructure.ContextInstallers
 
         private void BindBubbleDeathService() =>
             Container
-                .BindInterfacesAndSelfTo<BubbleDeathService>()
+                .BindInterfacesAndSelfTo<CubeDeathService>()
                 .AsSingle();
-        
         
         private void BindBubblesHolder() =>
             Container
-                .BindInterfacesAndSelfTo<BubblesHolderService>()
+                .BindInterfacesAndSelfTo<CubeHolderService>()
                 .AsSingle();
         
         private void BindGameSpeedMultiplier() =>
@@ -55,16 +54,14 @@ namespace CodeBase.Infrastructure.ContextInstallers
                 .BindInterfacesAndSelfTo<GameGameSpeedMultiplierService>()
                 .AsSingle();
         
-        
         private void BindAssetProvider() =>
             Container
                 .BindInterfacesAndSelfTo<AssetProvider>()
                 .AsSingle();
 
-
         private void BindBubbleSpawner() =>
             Container
-                .BindInterfacesAndSelfTo<BubbleSpawnerService>()
+                .BindInterfacesAndSelfTo<CubesSpawnerService>()
                 .AsSingle();
         
         private void BindSphereSpawner() =>
@@ -79,18 +76,17 @@ namespace CodeBase.Infrastructure.ContextInstallers
         
         private void BindBubbleParametresRandomizer() =>
             Container
-                .BindInterfacesAndSelfTo<BubbleParametresRandomizerService>()
+                .BindInterfacesAndSelfTo<CubeParametresRandomizerService>()
                 .AsSingle();
-        
         
         private void BindBubbleFactory() =>
             Container
-                .BindInterfacesAndSelfTo<BubbleFactory>()
+                .BindInterfacesAndSelfTo<CubeFactory>()
                 .AsSingle();
         
         private void BindMoveService() =>
             Container
-                .BindInterfacesAndSelfTo<MoveService>()
+                .BindInterfacesAndSelfTo<CubesMoveService>()
                 .AsSingle()
                 .NonLazy();
         

@@ -1,7 +1,7 @@
-using CodeBase.GameSphere;
+using CodeBase.SoapBubble;
 using UnityEngine;
 
-namespace CodeBase.SoapBubble
+namespace CodeBase.Cubes
 {
 	public class ComponentsHolder
 	{
@@ -12,10 +12,10 @@ namespace CodeBase.SoapBubble
 		public float Points;
 
 
-		public ComponentsHolder(Bubble bubble)
+		public ComponentsHolder(Cube cube)
 		{
-			GameObject = bubble.gameObject;
-			Transform = bubble.transform;
+			GameObject = cube.gameObject;
+			Transform = cube.transform;
 		}
 	}
 }
