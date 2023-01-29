@@ -39,7 +39,7 @@ namespace CodeBase.Infrastructure.StateMachine.States
             _deathCounterService.Show();
             _countDownTimerService.StartTimer();
             
-            _sphereSpawnerService.CreateGameSphereSetStartPosition();
+            _sphereSpawnerService.CreateGameSphereSetStartPosition();  
         }
 
         public override void Exit()

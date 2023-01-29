@@ -10,7 +10,6 @@ using CodeBase.Infrastructure.Services.ImpactSpawner;
 using CodeBase.Infrastructure.Services.Move;
 using CodeBase.Infrastructure.Services.OutScreenPositioner;
 using CodeBase.Infrastructure.Services.OutScreenRemover;
-using CodeBase.Infrastructure.Services.SphereMove;
 using CodeBase.Infrastructure.Services.SphereSpawner;
 using Zenject;
 
@@ -33,7 +32,6 @@ namespace CodeBase.Infrastructure.ContextInstallers
             BindBubbleDeathService();
             BindGameStats();
             BindSphereSpawner();
-            BindSphereMover();
         }
         
         private void BindGameStats() =>
@@ -73,11 +71,6 @@ namespace CodeBase.Infrastructure.ContextInstallers
             Container
                 .BindInterfacesAndSelfTo<SphereSpawnerService>()
                 .AsSingle(); 
-        private void BindSphereMover() =>
-            Container
-                .BindInterfacesAndSelfTo<SphereMoveService>()
-                .AsSingle();
-        
         
         private void BindOutScreenPositioner() =>
             Container
