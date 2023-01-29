@@ -141,10 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0da48189ff4d678d201f6b070ad552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathSegmentDelta: 1
+  pathSegmentDelta: 0.5
   destinationReachedThreshold: 0.3
   speed: 7
-  fullDistance: 0
 --- !u!114 &-5940426547995697587
 MonoBehaviour:
   m_ObjectHideFlags: 0

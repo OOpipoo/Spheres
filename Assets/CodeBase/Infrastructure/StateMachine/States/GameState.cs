@@ -1,5 +1,4 @@
 using CodeBase.Infrastructure.Services.BubbleSpawner;
-using CodeBase.Infrastructure.Services.ClickDetector;
 using CodeBase.Infrastructure.Services.GameSpeedMultiplier;
 using CodeBase.Infrastructure.Services.SphereSpawner;
 using CodeBase.Infrastructure.Services.UI.CountDownTimer;
@@ -13,7 +12,6 @@ namespace CodeBase.Infrastructure.StateMachine.States
     {
         private BubbleSpawnerService _bubbleSpawnerService;
         private GameGameSpeedMultiplierService _gameGameSpeedMultiplierService;
-        private ClickDetectorService _clickDetectorService;
         private DeathCounterService _deathCounterService;
         private CountDownTimerService _countDownTimerService;
         private SphereSpawnerService _sphereSpawnerService;
@@ -23,12 +21,11 @@ namespace CodeBase.Infrastructure.StateMachine.States
 
         [Inject]
         private void Construct(BubbleSpawnerService bubbleSpawnerService, GameGameSpeedMultiplierService gameGameSpeedMultiplierService,
-           ClickDetectorService clickDetectorService, DeathCounterService deathCounterService, CountDownTimerService countDownTimerService,
+            DeathCounterService deathCounterService, CountDownTimerService countDownTimerService,
            SphereSpawnerService sphereSpawnerService, DistanceCounterService distanceCounterService)
         {
             _countDownTimerService = countDownTimerService;
             _deathCounterService = deathCounterService;
-            _clickDetectorService = clickDetectorService;
             _gameGameSpeedMultiplierService = gameGameSpeedMultiplierService;
             _bubbleSpawnerService = bubbleSpawnerService;
             _sphereSpawnerService = sphereSpawnerService;
@@ -38,7 +35,6 @@ namespace CodeBase.Infrastructure.StateMachine.States
         {
             _bubbleSpawnerService.StartSpawn();
             _gameGameSpeedMultiplierService.Start();
-            _clickDetectorService.StartDetecting();
             _deathCounterService.Show();
             _distanceCounterService.Show();
             _countDownTimerService.StartTimer(); 
@@ -49,7 +45,6 @@ namespace CodeBase.Infrastructure.StateMachine.States
         {
             _bubbleSpawnerService.StopSpawn();
             _gameGameSpeedMultiplierService.Stop();
-            _clickDetectorService.StopDetecting();
             _deathCounterService.Hide();
             _distanceCounterService.Hide();
             _sphereSpawnerService.DestroySphere();
