@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SpherePreferences
   m_EditorClassIdentifier: 
   SpherePrefab: {fileID: 5783419834339655245, guid: bfb88906dcedcf6408ec9f7f0f1be38a, type: 3}
-  PoolSize: 0
+  PoolSize: 1

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356e39a9668c4dc4a8d506a2933a4ce2, type: 3}
   m_Name: BubblePreferences
   m_EditorClassIdentifier: 
-  BubblePrefab: {fileID: -2008426639277094506, guid: 8c40bb2b8a87e2d4b90d47f803423a40, type: 3}
+  BubblePrefab: {fileID: -3886670638723749979, guid: 67aa4c1bf7eaa764bb374ab8ae3676ef, type: 3}
   PoolSize: 10

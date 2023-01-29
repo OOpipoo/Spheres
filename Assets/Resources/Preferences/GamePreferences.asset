@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0dfa379ce2f6c342af4e965695287ff, type: 3}
   m_Name: GamePreferences
   m_EditorClassIdentifier: 
-  SpeedUpFactor: 1.2
-  SpeedUpTimer: 6
+  SpeedUpFactor: 1.5
+  SpeedUpTimer: 8
   RoundDuration: 60

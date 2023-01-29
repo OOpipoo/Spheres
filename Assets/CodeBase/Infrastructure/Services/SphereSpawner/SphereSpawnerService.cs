@@ -8,7 +8,7 @@ namespace CodeBase.Infrastructure.Services.SphereSpawner
 {
 	public class SphereSpawnerService
 	{
-		private Vector3 _gameSphereStartPoint = new (0, -3.5f, 0);
+		private Vector3 _gameSphereStartPoint = new (0, -1f, 0);
 		private readonly DiContainer _diContainer;
 		private SpherePreferences _spherePreferences;
 		private Sphere _sphere;
@@ -38,6 +38,3 @@ namespace CodeBase.Infrastructure.Services.SphereSpawner
 		}
 	}
 }
-
-// var componentsHolder = new ComponentsHolder(obj);
-// obj.ComponentsHolder = componentsHolder;

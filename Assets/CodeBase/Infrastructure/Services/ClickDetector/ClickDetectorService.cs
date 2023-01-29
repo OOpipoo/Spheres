@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UniRx;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.ClickDetector
@@ -32,25 +33,10 @@ namespace CodeBase.Infrastructure.Services.ClickDetector
 		
 		public void StopDetecting() => 
 			_compositeDisposable.Clear();
-
+		
 		private void Detect()
 		{
-			if (Input.GetMouseButtonDown(0))
-			{
-				_path.Clear();
-			}
-			else if(Input.GetMouseButton(0))
-			{
-				var ray = _camera.ScreenPointToRay(Input.mousePosition);
-				if (Physics.Raycast(ray, out var hit, 200))
-				{
-					_path.Add(hit.point);
-				}
-			}
-			else if(Input.GetMouseButtonUp(0))
-			{
-				// _sphereMoveService.MoveToPath(_path); 
-			} 
+			
 		}
 	}
 }

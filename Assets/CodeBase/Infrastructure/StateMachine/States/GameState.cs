@@ -33,7 +33,7 @@ namespace CodeBase.Infrastructure.StateMachine.States
         }
         public override void Enter()
         {
-            // _bubbleSpawnerService.StartSpawn();
+            _bubbleSpawnerService.StartSpawn();
             _gameGameSpeedMultiplierService.Start();
             _clickDetectorService.StartDetecting();
             _deathCounterService.Show();

@@ -107,7 +107,7 @@ namespace CodeBase.SphereMover
         {
             return;
         } 
-        var ray = _camera.ScreenPointToRay(Input.mousePosition);
+        var ray = _camera.ScreenPointToRay(Input.mousePosition); 
         
         if (Physics.Raycast(ray, out var hit))
         {
