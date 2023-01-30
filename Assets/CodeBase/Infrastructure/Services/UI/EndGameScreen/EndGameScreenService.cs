@@ -11,6 +11,7 @@ namespace CodeBase.Infrastructure.Services.UI.EndGameScreen
 	public class EndGameScreenService : MonoBehaviour
 	{
 		[SerializeField] private TextMeshProUGUI _pointsText;
+		[SerializeField] private TextMeshProUGUI _distanceText;
 		private Canvas _canvas;
 		private GameStatsService _gameStatsService;
 		private GameLoopStateMachine _gameLoopStateMachine;
@@ -32,6 +33,7 @@ namespace CodeBase.Infrastructure.Services.UI.EndGameScreen
 		{
 			_canvas.enabled = true;
 			_pointsText.text = _gameStatsService.Points.ToString("F0");
+			_distanceText.text = _gameStatsService.Distance.Value.ToString("0");
 		}
 
 		public void Hide() => 

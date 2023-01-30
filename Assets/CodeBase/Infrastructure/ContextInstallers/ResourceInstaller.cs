@@ -21,8 +21,8 @@ namespace CodeBase.Infrastructure.ContextInstallers
 		
 		private void BindBubblePreferences() =>
 			Container
-				.BindInterfacesAndSelfTo<BubblePreferences>()
-				.FromResource(AssetPath.BubblePreferences)
+				.BindInterfacesAndSelfTo<CubePreferences>()
+				.FromResource(AssetPath.CubePreferences)
 				.AsSingle();
 		
 		private void BindSpawnerPreferences() =>

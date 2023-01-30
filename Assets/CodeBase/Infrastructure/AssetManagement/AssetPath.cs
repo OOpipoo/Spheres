@@ -4,7 +4,7 @@ namespace CodeBase.Infrastructure.AssetManagement
     public static class AssetPath
     {
         public const string SpherePreferences = "Preferences/SpherePreferences";
-        public const string BubblePreferences = "Preferences/BubblePreferences";
+        public const string CubePreferences = "Preferences/CubePreferences";
         public const string SpawnerPreferences = "Preferences/SpawnPreferences";
         public const string GamePreferences = "Preferences/GamePreferences";
         public const string VFXImpact = "VFX/Impact";
