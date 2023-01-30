@@ -3,7 +3,6 @@ using CodeBase.Cubes;
 using CodeBase.Infrastructure.Factories;
 using CodeBase.Infrastructure.Services.CubeHolder;
 using CodeBase.Infrastructure.StaticData;
-using CodeBase.SoapBubble;
 using UniRx;
 
 namespace CodeBase.Infrastructure.Services.CubeSpawner

@@ -1,6 +1,6 @@
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factories;
-using CodeBase.Infrastructure.Services.BubbleDeath;
+using CodeBase.Infrastructure.Services.CubeDeath;
 using CodeBase.Infrastructure.Services.CubeHolder;
 using CodeBase.Infrastructure.Services.CubeParametresRandomizer;
 using CodeBase.Infrastructure.Services.CubesMove;
@@ -51,7 +51,7 @@ namespace CodeBase.Infrastructure.ContextInstallers
         
         private void BindGameSpeedMultiplier() =>
             Container
-                .BindInterfacesAndSelfTo<GameGameSpeedMultiplierService>()
+                .BindInterfacesAndSelfTo<GameSpeedMultiplierService>()
                 .AsSingle();
         
         private void BindAssetProvider() =>

@@ -1,9 +1,9 @@
+using CodeBase.Cubes;
 using CodeBase.Infrastructure.Services.CubeHolder;
 using CodeBase.Infrastructure.Services.GameStats;
 using CodeBase.Infrastructure.Services.ImpactSpawner;
-using CodeBase.SoapBubble;
 
-namespace CodeBase.Infrastructure.Services.BubbleDeath
+namespace CodeBase.Infrastructure.Services.CubeDeath
 {
 	public class CubeDeathService
 	{

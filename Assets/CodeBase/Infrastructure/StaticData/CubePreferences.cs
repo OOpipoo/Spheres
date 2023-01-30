@@ -1,4 +1,4 @@
-using CodeBase.SoapBubble;
+using CodeBase.Cubes;
 using UnityEngine;
 using UnityEngine.Serialization;
 

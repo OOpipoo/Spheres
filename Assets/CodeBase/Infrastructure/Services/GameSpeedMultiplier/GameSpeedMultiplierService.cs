@@ -5,13 +5,13 @@ using UniRx;
 
 namespace CodeBase.Infrastructure.Services.GameSpeedMultiplier
 {
-	public class GameGameSpeedMultiplierService : IResettable, IGameSpeed
+	public class GameSpeedMultiplierService : IResettable, IGameSpeed
 	{
 		public float GameSpeed { get; set; }
 		private readonly GamePreferences _gamePreferences;
 		private readonly CompositeDisposable _disposables = new();
 
-		public GameGameSpeedMultiplierService(GamePreferences gamePreferences)
+		public GameSpeedMultiplierService(GamePreferences gamePreferences)
 		{
 			_gamePreferences = gamePreferences;
 		}

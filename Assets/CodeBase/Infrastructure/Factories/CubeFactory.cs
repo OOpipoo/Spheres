@@ -2,7 +2,6 @@ using CodeBase.Cubes;
 using CodeBase.Infrastructure.ObjectPools;
 using CodeBase.Infrastructure.Services.CubeParametresRandomizer;
 using CodeBase.Infrastructure.Services.OutScreenPositioner;
-using CodeBase.SoapBubble;
 
 namespace CodeBase.Infrastructure.Factories
 {

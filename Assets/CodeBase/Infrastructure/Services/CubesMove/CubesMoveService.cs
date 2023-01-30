@@ -1,7 +1,6 @@
 using CodeBase.Cubes;
 using CodeBase.Infrastructure.Services.CubeHolder;
 using CodeBase.Infrastructure.Services.GameSpeedMultiplier;
-using CodeBase.SoapBubble;
 using UnityEngine;
 using Zenject;
 

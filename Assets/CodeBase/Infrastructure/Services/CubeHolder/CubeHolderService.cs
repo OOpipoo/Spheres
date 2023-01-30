@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using CodeBase.Cubes;
 using CodeBase.Infrastructure.ObjectPools;
 using CodeBase.Infrastructure.StateMachine;
-using CodeBase.SoapBubble;
 
 namespace CodeBase.Infrastructure.Services.CubeHolder
 {

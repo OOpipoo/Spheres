@@ -1,5 +1,5 @@
-﻿using CodeBase.Infrastructure.Services.BubbleDeath;
-using CodeBase.SoapBubble;
+﻿using CodeBase.Cubes;
+using CodeBase.Infrastructure.Services.CubeDeath;
 using UnityEngine;
 using Zenject;
 

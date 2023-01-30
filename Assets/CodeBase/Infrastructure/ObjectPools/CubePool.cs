@@ -1,6 +1,5 @@
 using CodeBase.Cubes;
 using CodeBase.Infrastructure.StaticData;
-using CodeBase.SoapBubble;
 using UnityEngine;
 using Zenject;
 

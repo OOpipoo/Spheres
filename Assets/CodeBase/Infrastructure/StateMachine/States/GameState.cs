@@ -11,7 +11,7 @@ namespace CodeBase.Infrastructure.StateMachine.States
     public class GameState : State
     {
         private CubesSpawnerService _cubesSpawnerService;
-        private GameGameSpeedMultiplierService _gameGameSpeedMultiplierService;
+        private GameSpeedMultiplierService _gameSpeedMultiplierService;
         private DeathCounterService _deathCounterService;
         private CountDownTimerService _countDownTimerService;
         private SphereSpawnerService _sphereSpawnerService;
@@ -20,13 +20,13 @@ namespace CodeBase.Infrastructure.StateMachine.States
         public GameState(GameLoopStateMachine gameLoopStateMachine) : base(gameLoopStateMachine) { }
 
         [Inject]
-        private void Construct(CubesSpawnerService cubesSpawnerService, GameGameSpeedMultiplierService gameGameSpeedMultiplierService,
+        private void Construct(CubesSpawnerService cubesSpawnerService, GameSpeedMultiplierService gameSpeedMultiplierService,
             DeathCounterService deathCounterService, CountDownTimerService countDownTimerService,
            SphereSpawnerService sphereSpawnerService, DistanceCounterService distanceCounterService)
         {
             _countDownTimerService = countDownTimerService;
             _deathCounterService = deathCounterService;
-            _gameGameSpeedMultiplierService = gameGameSpeedMultiplierService;
+            _gameSpeedMultiplierService = gameSpeedMultiplierService;
             _cubesSpawnerService = cubesSpawnerService;
             _sphereSpawnerService = sphereSpawnerService;
             _distanceCounterService = distanceCounterService;
@@ -34,7 +34,7 @@ namespace CodeBase.Infrastructure.StateMachine.States
         public override void Enter()
         {
             _cubesSpawnerService.StartSpawn();
-            _gameGameSpeedMultiplierService.Start();
+            _gameSpeedMultiplierService.Start();
             _deathCounterService.Show();
             _distanceCounterService.Show();
             _countDownTimerService.StartTimer(); 
@@ -44,7 +44,7 @@ namespace CodeBase.Infrastructure.StateMachine.States
         public override void Exit()
         {
             _cubesSpawnerService.StopSpawn();
-            _gameGameSpeedMultiplierService.Stop();
+            _gameSpeedMultiplierService.Stop();
             _deathCounterService.Hide();
             _distanceCounterService.Hide();
             _sphereSpawnerService.DestroySphere();

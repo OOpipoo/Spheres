@@ -1,7 +1,6 @@
-using CodeBase.Cubes;
 using UnityEngine;
 
-namespace CodeBase.SoapBubble
+namespace CodeBase.Cubes
 {
 	public class Cube : MonoBehaviour
 	{

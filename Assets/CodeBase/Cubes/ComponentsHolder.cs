@@ -1,4 +1,3 @@
-using CodeBase.SoapBubble;
 using UnityEngine;
 
 namespace CodeBase.Cubes
